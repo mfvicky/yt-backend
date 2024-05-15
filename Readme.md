@@ -13,3 +13,5 @@ whenever you will face error of 'import'
 please add .js also `import connectDB from "./db/index.js";``
 
 after added .js your nodemon will restart the project or you want to restart that project also
+
+-[status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
