@@ -96,8 +96,8 @@ const loginUser = asyncHandler(async (req, res) => {
     // access and refresh token gernate and send
     // send secure cookie to client
 
-    const { username, email, password } = req.body;
-    if (username || !email) {
+    const { email, username, password } = req.body;
+    if (!username && !email) {
         throw new ApiError(400, "username or email is required")
     }
 
@@ -106,6 +106,7 @@ const loginUser = asyncHandler(async (req, res) => {
     if (!user) {
         throw new ApiError(404, "User does not exist")
     }
+    console.log(req.body, user, 'password->',password,'email->', email);
 
     const isPasswordValid = await user.isPasswordCorrect(password)
 
